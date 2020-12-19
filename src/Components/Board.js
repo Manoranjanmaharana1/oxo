@@ -7,6 +7,22 @@ const Board = () => {
     const [x_arr, setXArray] = useState([]);
     const [winner, setWinner] = useState(<></>);
     const [gameover, setResults] = useState(false);
+    const replay = () => {
+        for (let i = 1; i <= 9; ++i) {
+            document.querySelector("#cell-container" + i.toString()).classList.remove("disable");
+            document.querySelector(".cell-" + i.toString()).classList.remove("elementToAnimate");
+        }
+        setCurr(true);
+        setOArray([]);
+        setXArray([]);
+        setWinner(<></>);
+        setResults(false);
+
+    }
+
+
+
+
     useEffect(() => {
         if (!gameover) {
             if ((o_arr.indexOf("1") !== -1 && o_arr.indexOf("2") !== -1 && o_arr.indexOf("3") !== -1)
@@ -20,9 +36,13 @@ const Board = () => {
                 console.log("o");
                 setResults(true);
                 setWinner(
+                    <>
                     <div className="result">
-                        <h1>O WON!!</h1>
+                        
+                        <h1>O Won!!</h1>
                     </div>
+                    <div className="reload" onClick={replay}>Replay</div>
+                    </>
                 )
                 freeze();
             }
@@ -36,19 +56,25 @@ const Board = () => {
                 || (x_arr.indexOf("3") !== -1 && x_arr.indexOf("5") !== -1 && x_arr.indexOf("7") !== -1)) {
                 console.log("x");
                 setWinner(
+                    <>
                     <div className="result">
                         
-                        <h1>X WON!!</h1>
+                        <h1>X Won!!</h1>
                     </div>
+                    <div className="reload" onClick={replay}>Replay</div>
+                    </>
                 )
                 setResults(true);
                 freeze();
             }else if(o_arr.length + x_arr.length === 9){
                 setWinner(
+                    <>
                     <div className="result">
                         
                         <h1>TIED!!</h1>
                     </div>
+                    <div className="reload" onClick={replay}>Replay</div>
+                    </>
                 )
                 setResults(true);
             }
