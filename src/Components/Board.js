@@ -7,6 +7,11 @@ const Board = () => {
     const [x_arr, setXArray] = useState([]);
     const [winner, setWinner] = useState(<></>);
     const [gameover, setResults] = useState(false);
+
+
+
+
+    
     const replay = () => {
         for (let i = 1; i <= 9; ++i) {
             document.querySelector("#cell-container" + i.toString()).classList.remove("disable");
