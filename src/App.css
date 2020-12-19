@@ -103,4 +103,26 @@ body {
   background-color: #e6e6e6;
   pointer-events: none;
 }
+.result {
+  background-color: #ffd66b;
+  border-radius: 1rem;
+  box-shadow:
+  0 1.1px 1.8px rgba(0, 0, 0, -0.007),
+  0 2.7px 4.3px rgba(0, 0, 0, -0.002),
+  0 5px 8px rgba(0, 0, 0, 0.008),
+  0 8.9px 14.3px rgba(0, 0, 0, 0.022),
+  0 16.7px 26.7px rgba(0, 0, 0, 0.038),
+  0 40px 64px rgba(0, 0, 0, 0.04)
+;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+}
+.result h1 {
+  font-family: 'Courier New', Courier, monospace;
+  margin-left: 10px;
+}
 
